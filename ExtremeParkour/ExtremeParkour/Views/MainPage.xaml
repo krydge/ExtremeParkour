@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExtremeParkour.Views.MainPage"
+             xmlns:local="clr-namespace:ExtremeParkour.Views;assembly=ExtremeParkour.Views"
+            xmlns:local1="clr-namespace:ExtremeParkour.Views"
+            Title="{Binding Title}">
+
+    <local1:VideoTutorialsPage></local1:VideoTutorialsPage>
+    <local1:WorkoutsPage></local1:WorkoutsPage>
+
+</TabbedPage>
