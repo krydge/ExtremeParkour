@@ -12,6 +12,7 @@ namespace ExtremeParkour.Views
         public MainPage()
         {
             InitializeComponent();
+            
         }
     }
 }
