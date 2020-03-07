@@ -4,8 +4,29 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ExtremeParkour.Views.VideoTutorialsPage"
-             Title="VideoTutorialsPage">
+             Title="{Binding Title}">
     <StackLayout>
+        
         <Label Text="This is the Video Tutorial page."></Label>
+
+
+        <ListView ItemsSource="{Binding VideoTutorials}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BorderColor="Black"
+                            CornerRadius="10"
+                            HasShadow="True"
+                            BackgroundColor="white">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Title}"/>
+                                <Label Text="{Binding Focus}"/>
+                                <Label Text="{Binding UserLevel}"/>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>
