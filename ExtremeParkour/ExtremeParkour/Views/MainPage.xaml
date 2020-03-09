@@ -5,10 +5,11 @@
              xmlns:local="clr-namespace:ExtremeParkour.Views;assembly=ExtremeParkour.Views"
              xmlns:local1="clr-namespace:ExtremeParkour.Views"
              Title="{Binding Title}"
-             BackgroundColor="#00FF00">
-    
+             BackgroundColor="#00FF00" 
+           >
 
-    <local1:VideoTutorialsPage></local1:VideoTutorialsPage>
+    <TabbedPage.Children>
+    <local1:VideoTutorialsPage ></local1:VideoTutorialsPage>
     <local1:WorkoutsPage></local1:WorkoutsPage>
-
+    </TabbedPage.Children>
 </TabbedPage>
