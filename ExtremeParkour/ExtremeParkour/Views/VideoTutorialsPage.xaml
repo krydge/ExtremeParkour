@@ -19,7 +19,7 @@
         <Label Text="This is the Video Tutorial page."></Label>
 
 
-        <ListView ItemsSource="{Binding VideoTutorials}">
+        <ListView ItemsSource="{Binding VideoTutorials}" ListView.RowHeight="100">
             <ListView.Behaviors>
                 <b:EventToCommandBehavior EventName="ItemTapped"
                                        Command="{Binding ItemTappedCommand}"

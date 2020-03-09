@@ -15,8 +15,8 @@
     </ContentPage.Resources>
     <StackLayout>
         <Label Text="This is the workouts Page."></Label>
-        
-        <ListView ItemsSource="{Binding Workouts}">
+
+        <ListView ItemsSource="{Binding Workouts}" ListView.RowHeight="100">
             <ListView.Behaviors>
                 <b:EventToCommandBehavior EventName="ItemTapped"
                                        Command="{Binding ItemTappedCommand}"
