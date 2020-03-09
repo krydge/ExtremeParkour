@@ -114,6 +114,19 @@ namespace ExtremeParkour.ViewModels
             VideoTutorials.Add(tutorial8);
         }
 
-        
+        private DelegateCommand<VideoTutorialData> itemTappedCommand;
+
+        public DelegateCommand<VideoTutorialData> ItemTappedCommand => itemTappedCommand ?? (itemTappedCommand = new DelegateCommand<VideoTutorialData>(ExecuteItemTappedCommand));
+
+        public void ExecuteItemTappedCommand(VideoTutorialData selectedWorkout)
+        {
+            NavigationParameters Parameters = new NavigationParameters
+            {
+                { "tutorial", selectedWorkout }
+            };
+            TestableNavigation.TestableNavigateAsync(NavigationService, nameof(Views.VideoTutorialDetailPage), Parameters, false, true).ConfigureAwait(false);
+
+        }
+
     }
 }

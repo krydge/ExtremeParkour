@@ -32,6 +32,8 @@ namespace ExtremeParkour
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<VideoTutorialsPage, VideoTutorialsPageViewModel>();
             containerRegistry.RegisterForNavigation<WorkoutsPage, WorkoutsPageViewModel>();
+            containerRegistry.RegisterForNavigation<WorkoutDetailPage, WorkoutDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<VideoTutorialDetailPage, VideoTutorialDetailPageViewModel>();
         }
     }
 }

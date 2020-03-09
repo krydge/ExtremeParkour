@@ -105,5 +105,20 @@ namespace ExtremeParkour.ViewModels
 
             Workouts.Add(tutorial8);
         }
+
+
+        private DelegateCommand<WorkoutData> itemTappedCommand;
+
+        public DelegateCommand<WorkoutData> ItemTappedCommand => itemTappedCommand ?? (itemTappedCommand = new DelegateCommand<WorkoutData>(ExecuteItemTappedCommand));
+
+        public void ExecuteItemTappedCommand(WorkoutData selectedWorkout)
+        {
+            NavigationParameters Parameters = new NavigationParameters
+            {
+                { "workout", selectedWorkout }
+            };
+            TestableNavigation.TestableNavigateAsync(NavigationService, nameof(Views.WorkoutDetailPage), Parameters, false, true).ConfigureAwait(false);
+
+        }  
     }
 }
