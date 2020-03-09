@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ExtremeParkour.Views.WorkoutDetailPage"
+             Title="{Binding Title}">
+
+
+    <StackLayout>
+        <Label Text="This is the workouts Page."></Label>
+
+        <Label Text="{Binding WorkoutName}"></Label>
+        <Label Text="{Binding Description}"></Label>
+        <Label Text="{Binding Difficulty}"></Label>
+
+    </StackLayout>
+
+</ContentPage>

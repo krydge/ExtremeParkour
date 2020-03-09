@@ -1,16 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:c="clr-namespace:ExtremeParkour.Converters"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ExtremeParkour.Views.VideoTutorialsPage"
              Title="{Binding Title}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <c:ItemTappedEventArgsConverter x:Key="itemTappedEventArgsConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <StackLayout>
         
         <Label Text="This is the Video Tutorial page."></Label>
 
 
         <ListView ItemsSource="{Binding VideoTutorials}">
+            <ListView.Behaviors>
+                <b:EventToCommandBehavior EventName="ItemTapped"
+                                       Command="{Binding ItemTappedCommand}"
+                                       EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />
+            </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
