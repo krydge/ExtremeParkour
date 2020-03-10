@@ -13,7 +13,7 @@ namespace ExtremeParkour.ViewModels
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Extreme Parkour Main Page";
+            Title = "Extreme Parkour";
         }
     }
 }

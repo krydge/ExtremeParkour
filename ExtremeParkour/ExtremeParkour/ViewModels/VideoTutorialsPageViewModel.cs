@@ -19,7 +19,6 @@ namespace ExtremeParkour.ViewModels
             set { SetProperty(ref videoTutorials, value); }
         }
 
-        public ImageSource ImageSource => ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg");
 
         public VideoTutorialsPageViewModel(INavigationService navigationService)
             : base(navigationService)
