@@ -12,8 +12,8 @@ namespace ExtremeParkour.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+            TabLayoutResource = ExtremeParkour1.Droid.Resource.Layout.Tabbar;
+            ToolbarResource = ExtremeParkour1.Droid.Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
 

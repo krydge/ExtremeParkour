@@ -5,6 +5,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace ExtremeParkour.ViewModels
 {
@@ -15,6 +16,8 @@ namespace ExtremeParkour.ViewModels
         {
             Title = "Video Tutorial Details";
         }
+
+        public ImageSource ImageSource => ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg");
 
         public VideoTutorialData Tutorial { get; private set; }
 

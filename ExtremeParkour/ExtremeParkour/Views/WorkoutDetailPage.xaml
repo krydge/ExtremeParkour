@@ -10,9 +10,11 @@
     <StackLayout>
         <Label Text="This is the workouts Page."></Label>
 
+
         <Label Text="{Binding WorkoutName}"></Label>
-        <Label Text="{Binding Description}"></Label>
         <Label Text="{Binding Difficulty}"></Label>
+        <Image Source="{Binding ImageSource}"></Image>
+        <Label Text="{Binding Description}"></Label>
 
     </StackLayout>
 

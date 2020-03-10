@@ -5,6 +5,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace ExtremeParkour.ViewModels
 {
@@ -17,6 +18,9 @@ namespace ExtremeParkour.ViewModels
             get => workouts;
             set { SetProperty(ref workouts, value); }
         }
+
+        public ImageSource ImageSource => ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg");
+
         public WorkoutsPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
