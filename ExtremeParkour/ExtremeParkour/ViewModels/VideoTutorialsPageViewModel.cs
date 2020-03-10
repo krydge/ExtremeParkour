@@ -32,7 +32,7 @@ namespace ExtremeParkour.ViewModels
             {
                 Video = "null1",
                 Source= ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
-            Title = "Test Video1",
+                Title = "Test Video1",
                 Focus = "Jumping1",
                 Description = "This is to practice your jumping",
                 UserLevel = "Beginner"
@@ -43,6 +43,7 @@ namespace ExtremeParkour.ViewModels
             var tutorial2 = new VideoTutorialData
             {
                 Video = "null2",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video2",
                 Focus = "Jumping2",
                 Description = "This is to practice your jumping",
@@ -54,6 +55,7 @@ namespace ExtremeParkour.ViewModels
             var tutorial3 = new VideoTutorialData
             {
                 Video = "null3",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video3",
                 Focus = "Jumping3",
                 Description = "This is to practice your jumping",
@@ -66,6 +68,7 @@ namespace ExtremeParkour.ViewModels
             {
                 Video = "null4",
                 Title = "Test Video4",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping4",
                 Description = "This is to practice your jumping",
                 UserLevel = "Master"
@@ -76,6 +79,7 @@ namespace ExtremeParkour.ViewModels
             var tutorial5 = new VideoTutorialData
             {
                 Video = "null5",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video5",
                 Focus = "Jumping5",
                 Description = "This is to practice your jumping",
@@ -88,6 +92,7 @@ namespace ExtremeParkour.ViewModels
             {
                 Video = "null6",
                 Title = "Test Video6",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping6",
                 Description = "This is to practice your jumping",
                 UserLevel = "Intermediate"
@@ -99,6 +104,7 @@ namespace ExtremeParkour.ViewModels
             {
                 Video = "null7",
                 Title = "Test Video7",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping7",
                 Description = "This is to practice your jumping",
                 UserLevel = "Hard"
@@ -110,6 +116,7 @@ namespace ExtremeParkour.ViewModels
             {
                 Video = "null8",
                 Title = "Test Video8",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping8",
                 Description = "This is to practice your jumping",
                 UserLevel = "Master"
