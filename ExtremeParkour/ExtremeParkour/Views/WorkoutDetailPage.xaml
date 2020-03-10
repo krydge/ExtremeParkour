@@ -13,7 +13,7 @@
 
         <Label Text="{Binding WorkoutName}"></Label>
         <Label Text="{Binding Difficulty}"></Label>
-        <Image Source="{Binding ImageSource}"></Image>
+        <Image Source="{Binding Source}"></Image>
         <Label Text="{Binding Description}"></Label>
 
     </StackLayout>

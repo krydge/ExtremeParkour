@@ -17,9 +17,14 @@ namespace ExtremeParkour.ViewModels
             Title = "Workout Detail Page";
         }
 
-        public ImageSource ImageSource => ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg");
-
         public WorkoutData Workout { get; private set; }
+
+        private ImageSource source;
+        public ImageSource Source
+        {
+            get => source;
+            set { SetProperty(ref source, value); }
+        }
 
         private string workoutName;
         public string WorkoutName
@@ -52,6 +57,7 @@ namespace ExtremeParkour.ViewModels
             }
             else
             {
+                Source = Workout.Source;
                 WorkoutName = Workout.Title;
                 Description = Workout.Description;
                 Difficulty = Workout.Difficulty;

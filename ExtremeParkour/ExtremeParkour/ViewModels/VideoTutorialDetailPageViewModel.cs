@@ -17,9 +17,14 @@ namespace ExtremeParkour.ViewModels
             Title = "Video Tutorial Details";
         }
 
-        public ImageSource ImageSource => ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg");
-
         public VideoTutorialData Tutorial { get; private set; }
+
+        private ImageSource source;
+        public ImageSource Source
+        {
+            get => source;
+            set { SetProperty(ref source, value); }
+        }
 
         private string tutorialName;
         public string TutorialName
@@ -59,6 +64,7 @@ namespace ExtremeParkour.ViewModels
             }
             else
             {
+                Source = Tutorial.Source;
                 TutorialName = Tutorial.Title;
                 Focus = Tutorial.Focus;
                 Description = Tutorial.Description;
