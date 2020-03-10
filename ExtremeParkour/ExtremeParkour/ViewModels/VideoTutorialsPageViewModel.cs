@@ -31,7 +31,8 @@ namespace ExtremeParkour.ViewModels
             var tutorial1 = new VideoTutorialData
             {
                 Video = "null1",
-                Title = "Test Video1",
+                Source= ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
+            Title = "Test Video1",
                 Focus = "Jumping1",
                 Description = "This is to practice your jumping",
                 UserLevel = "Beginner"
