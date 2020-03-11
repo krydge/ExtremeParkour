@@ -2,9 +2,9 @@
 
 namespace ExtremeParkour.Views
 {
-    public partial class AdminControls : TabbedPage
+    public partial class AddTutorial : ContentPage
     {
-        public AdminControls()
+        public AddTutorial()
         {
             InitializeComponent();
         }

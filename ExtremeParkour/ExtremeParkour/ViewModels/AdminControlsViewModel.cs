@@ -17,35 +17,5 @@ namespace ExtremeParkour.ViewModels
             Title = "Admin Page";
         }
 
-        public Command addToWorkouts;
-        public Command AddToWorkouts => addToWorkouts ?? (addToWorkouts = new Command(async () =>
-        {
-           
-        }));
-        public Command addToTutorials;
-        public Command AddToTutorials => addToTutorials ?? (addToTutorials = new Command(async () =>
-        {
-
-        }));
-        public Command chooseVideo;
-        public Command ChooseVideo => chooseVideo ?? (chooseVideo = new Command(async () =>
-        {
-            var file = await CrossFilePicker.Current.PickFile();
-
-            if (file != null)
-            {
-                //lbl.Text = file.FileName;
-            }
-        }));
-        public Command chooseImage;
-        public Command ChooseImage => chooseImage ?? (chooseImage = new Command(async () =>
-        {
-            var file = await CrossFilePicker.Current.PickFile();
-
-            if (file != null)
-            {
-                //lbl.Text = file.FileName;
-            }
-        }));
     }
 }
