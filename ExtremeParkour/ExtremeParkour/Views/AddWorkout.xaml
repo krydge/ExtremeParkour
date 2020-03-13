@@ -29,9 +29,17 @@
             <Label Text="Video Dificulty Level"></Label>
             <Entry></Entry>
             <Label Text="Upload Video File"></Label>
-            <Button Command="{Binding ChooseVideo}" Text="Choose Video File"></Button>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding VFText}"></Label>
+
+                <Button Command="{Binding ChooseVideo}" Text="Choose Video File"></Button>
+            </StackLayout>
             <Label Text="Video Still Image Upload"></Label>
-            <Button Command="{Binding ChooseImage}" Text="Choose Image File"></Button>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding VFText2}"></Label>
+
+                <Button Command="{Binding ChooseImage}" Text="Choose Image File"></Button>
+            </StackLayout>
         </StackLayout>
         <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="Accent" Text="Add to Workouts" HorizontalOptions="CenterAndExpand" Command="{Binding AddToWorkouts}"></Button>
     </Grid>
