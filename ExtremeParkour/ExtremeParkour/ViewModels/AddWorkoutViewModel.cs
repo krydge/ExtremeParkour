@@ -62,7 +62,7 @@ namespace ExtremeParkour.ViewModels
             if (file != null)
             {
                 fileData2 = file.DataArray;
-                VFText2 = file.FileName.Length <= 2 ? file.FileName : file.FileName.Substring(0, 17) + "...";
+                VFText2 = file.FileName.Length <= 20 ? file.FileName : file.FileName.Substring(0, 17) + "...";
             }
         }));
     }
