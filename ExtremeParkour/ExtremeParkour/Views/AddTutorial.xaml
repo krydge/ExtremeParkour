@@ -6,43 +6,45 @@
              Title="{Binding Title}" 
              x:Class="ExtremeParkour.Views.AddTutorial">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height=".2*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height=".2*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".2*"></ColumnDefinition>
-            <ColumnDefinition ></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width=".2*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <StackLayout Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1">
-            <Label Text="Tutorials" HorizontalOptions="CenterAndExpand" Grid.ColumnSpan="2"></Label>
-            <Label Text="Video Title"></Label>
-            <Entry></Entry>
-            <Label Text="Video Focus"></Label>
-            <Entry></Entry>
-            <Label Text="Video Description"></Label>
-            <Entry></Entry>
-            <Label Text="User Level"></Label>
-            <Entry></Entry>
-            <Label Text="Upload Video File"></Label>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="{Binding VFText}"></Label>
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*"></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width=".2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1">
+                <Label Text="Tutorials" HorizontalOptions="CenterAndExpand" Grid.ColumnSpan="2"></Label>
+                <Label Text="Video Title"></Label>
+                <Entry></Entry>
+                <Label Text="Video Focus"></Label>
+                <Entry></Entry>
+                <Label Text="Video Description"></Label>
+                <Entry></Entry>
+                <Label Text="User Level"></Label>
+                <Entry></Entry>
+                <Label Text="Upload Video File"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding VFText}"></Label>
 
-                <Button Command="{Binding ChooseVideo}" Text="Choose Video File"></Button>
-            </StackLayout>
-            <Label Text="Video Still Image Upload"></Label>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="{Binding VFText2}"></Label>
+                    <Button Command="{Binding ChooseVideo}" Text="Choose Video File"></Button>
+                </StackLayout>
+                <Label Text="Video Still Image Upload"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding VFText2}"></Label>
 
-                <Button Command="{Binding ChooseImage}" Text="Choose Image File"></Button>
+                    <Button Command="{Binding ChooseImage}" Text="Choose Image File"></Button>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
-        <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="Accent" Text="Add to Tutorials" HorizontalOptions="CenterAndExpand" Command="{Binding AddToTutorials}"></Button>
-    </Grid>
+            <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="Accent" Text="Add to Tutorials" HorizontalOptions="CenterAndExpand" Command="{Binding AddToTutorials}"></Button>
+        </Grid>
+    </ScrollView>
 
 </ContentPage>
