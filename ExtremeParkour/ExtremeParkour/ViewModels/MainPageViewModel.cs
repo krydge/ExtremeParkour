@@ -15,5 +15,6 @@ namespace ExtremeParkour.ViewModels
         {
             Title = "Extreme Parkour";
         }
+
     }
 }

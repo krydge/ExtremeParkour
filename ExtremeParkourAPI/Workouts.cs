@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ExtremeParkour.Data
+namespace ExtremeParkourAPI
 {
-    public class WorkoutData
+    public class Workouts
     {
-        public ImageSource Source { get; set; }
-        public byte[] Image { get; set; }
+        public byte[] Source { get; set; }
         public string ImageName { get; set; }
         public byte[] Video { get; set; }
         public string VideoName { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Difficulty { get; set; }
-
     }
 }
