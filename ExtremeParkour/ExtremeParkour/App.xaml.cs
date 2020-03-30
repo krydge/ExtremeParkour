@@ -37,6 +37,9 @@ namespace ExtremeParkour
             containerRegistry.RegisterForNavigation<AdminControls, AdminControlsViewModel>();
             containerRegistry.RegisterForNavigation<AddWorkout, AddWorkoutViewModel>();
             containerRegistry.RegisterForNavigation<AddTutorial, AddTutorialViewModel>();
+            
+            var weatherAPI = RestService.For<IWeatherService>("--APILocation(Example--- ""Http//localhost");
+            containerRegistry.RegisterInstance(weatherAPI);
         }
     }
 }
