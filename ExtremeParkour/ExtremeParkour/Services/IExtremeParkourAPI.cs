@@ -9,8 +9,8 @@ namespace ExtremeParkour.Services
 {
    public interface IWeatherForecastApi
     { 
-       [Get("/weatherforecast")]
-       Task<IEnumerable<WeatherForecast>> GetForecastAsync();
+       [Get("/weatherforecast/")]
+       IEnumerable<WeatherForecast> GetForecast();
    }
 
     public interface IExtremeParkourAPI
