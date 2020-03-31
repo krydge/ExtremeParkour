@@ -1,6 +1,8 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace ExtremeParkourAPI
+namespace ExtremeParkour.Shared
 {
     public class WeatherForecast
     {

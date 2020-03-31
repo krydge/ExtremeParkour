@@ -16,17 +16,5 @@ namespace ExtremeParkour.Views
             InitializeComponent();
             
         }
-
-        protected async override void OnAppearing() 
-        {
-            base.OnAppearing();
-            await CallApi();
-        }
-
-        async Task CallApi()
-        {
-            var nsAPI = RestService.For<IWeatherForecastApi>("http://localhost:5001");
-            var sugars = await nsAPI.GetForecastAsync();
-        }
     }
 }

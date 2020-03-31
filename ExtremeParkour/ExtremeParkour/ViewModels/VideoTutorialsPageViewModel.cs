@@ -1,4 +1,5 @@
 ﻿using ExtremeParkour.Data;
+using ExtremeParkour.Services;
 using ExtremeParkour.Shared;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -12,6 +13,7 @@ namespace ExtremeParkour.ViewModels
 {
     public class VideoTutorialsPageViewModel : ViewModelBase
     {
+        private readonly IWeatherService weatherService;
 
         private List<VideoTutorialData> videoTutorials;
         public List<VideoTutorialData> VideoTutorials
@@ -20,11 +22,20 @@ namespace ExtremeParkour.ViewModels
             set { SetProperty(ref videoTutorials, value); }
         }
 
+        private IEnumerable<WeatherForecast> forecast;
+        public IEnumerable<WeatherForecast> Forecast
+        {
+            get => forecast;
+            set { SetProperty(ref forecast, value); }
+        }
 
-        public VideoTutorialsPageViewModel(INavigationService navigationService)
+
+        public VideoTutorialsPageViewModel(INavigationService navigationService, IWeatherService weatherService)
             : base(navigationService)
         {
             Title = "VideoTutorialsPage";
+
+            this.weatherService = weatherService;
 
             VideoTutorials = new List<VideoTutorialData>();
 
@@ -139,5 +150,11 @@ namespace ExtremeParkour.ViewModels
 
         }
 
+
+        public Command getWeather;
+        public Command GetWeather => getWeather ?? (getWeather = new Command(async () =>
+        {
+            Forecast = await weatherService.GetForecastAsync();
+        }));
     }
 }

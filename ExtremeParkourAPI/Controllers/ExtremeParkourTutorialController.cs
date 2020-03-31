@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ExtremeParkourAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class ExtremeParkourTutorialController : ControllerBase
     {

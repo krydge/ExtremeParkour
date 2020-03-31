@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace ExtremeParkour.Data
+namespace ExtremeParkour.Shared
 {
     public class VideoTutorialData
     {

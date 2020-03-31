@@ -18,6 +18,23 @@
         
         <Label Text="This is the Video Tutorial page."></Label>
 
+        <Button Command="{Binding GetWeather}" Text="Get Forecasts"></Button>
+
+        <ListView ItemsSource="{Binding Forecast}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                                <Label Text="{Binding Date}"/>
+                                <Label Text="{Binding TemperatureC}"/>
+                                <Label Text="{Binding TemperatureF}"/>
+                                <Label Text="{Binding Summary}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
         <ListView ItemsSource="{Binding VideoTutorials}" ListView.RowHeight="110" HasUnevenRows="True" >
             <ListView.Behaviors>
                 <b:EventToCommandBehavior EventName="ItemTapped"

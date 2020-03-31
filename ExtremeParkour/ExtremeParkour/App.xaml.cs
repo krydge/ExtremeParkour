@@ -4,6 +4,8 @@ using ExtremeParkour.ViewModels;
 using ExtremeParkour.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Refit;
+using ExtremeParkour.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ExtremeParkour
@@ -38,7 +40,8 @@ namespace ExtremeParkour
             containerRegistry.RegisterForNavigation<AddWorkout, AddWorkoutViewModel>();
             containerRegistry.RegisterForNavigation<AddTutorial, AddTutorialViewModel>();
             
-            var weatherAPI = RestService.For<IWeatherService>("--APILocation(Example--- ""Http//localhost");
+            //The URL is for my local machine not for yours change it to yours if you plan to run it.
+            var weatherAPI = RestService.For<IWeatherService>("https://localhost:44393/weatherforecast");
             containerRegistry.RegisterInstance(weatherAPI);
         }
     }
