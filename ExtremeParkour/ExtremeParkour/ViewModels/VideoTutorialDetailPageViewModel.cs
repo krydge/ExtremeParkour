@@ -1,4 +1,5 @@
 ﻿using ExtremeParkour.Data;
+using ExtremeParkour.Shared;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;

@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace ExtremeParkour.Data
+namespace ExtremeParkour.Shared
 {
     public class WorkoutData
     {
         public ImageSource Source { get; set; }
-        public string Video { get; set; }
+        public string SourceName { get; set; }
+        public byte[] SourceData { get; set; }
+        public string VideoName { get; set; }
+        public byte[] VideoData { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Difficulty { get; set; }
