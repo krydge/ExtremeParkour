@@ -12,6 +12,9 @@ namespace ExtremeParkour
 {
     public partial class App
     {
+
+        string weatherssl = "https://localhost:5001";
+        string weathernonssl = "http://localhost:5000";
         /* 
          * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.
          * This imposes a limitation in which the App class must have a default constructor. 
@@ -39,10 +42,9 @@ namespace ExtremeParkour
             containerRegistry.RegisterForNavigation<AdminControls, AdminControlsViewModel>();
             containerRegistry.RegisterForNavigation<AddWorkout, AddWorkoutViewModel>();
             containerRegistry.RegisterForNavigation<AddTutorial, AddTutorialViewModel>();
-            
+
             //The URL is for my local machine not for yours change it to yours if you plan to run it.
-            var weatherAPI = RestService.For<IWeatherService>("https://localhost:44393/weatherforecast");
+            var weatherAPI = RestService.For<IWeatherService>(weathernonssl);
             containerRegistry.RegisterInstance(weatherAPI);
-        }
-    }
+        }}
 }
