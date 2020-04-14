@@ -7,5 +7,8 @@
 
 		<!-- Application resource dictionary -->
 
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#f21b3f" />
+        </Style>
 	</Application.Resources>
 </prism:PrismApplication>

@@ -47,7 +47,7 @@
                         <Frame BorderColor="Black"
                                 CornerRadius="10"
                                 HasShadow="True"
-                                BackgroundColor="white">
+                                 BackgroundColor="#9aadbf">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />

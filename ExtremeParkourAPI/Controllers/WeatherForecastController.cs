@@ -30,17 +30,17 @@ namespace ExtremeParkourAPI.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            var videos = dbContext.VideoMetaData.ToList();
+            /*var videos = dbContext.VideoMetaData.ToList();
             dbContext.VideoMetaData.Add(new VideoMetaData { Description = $"Created on {DateTime.Now.ToString()}", Title = $"New Video {videos.Count+1}" });
-            dbContext.SaveChanges();
+            dbContext.SaveChanges();*/
 
-            return from v in videos
+            /*return from v in videos
                    select new WeatherForecast
                    {
                        Date = DateTime.Now,
                        TemperatureC = 0,
                        Summary = v.Description
-                   };
+                   };*/
 
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
