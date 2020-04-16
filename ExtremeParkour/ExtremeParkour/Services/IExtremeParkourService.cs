@@ -12,17 +12,20 @@ namespace ExtremeParkour.Services
 
     public interface IExtremeParkourService
     {
+        [Get("/weatherforecast")]
+        Task<IEnumerable<WeatherForecast>> GetForecastAsync();
+
         [Get("/extremeparkourtutorial/")]
         Task<IEnumerable<VideoTutorialData>> GetTutorialsAsync();
 
         [Post("/extremeparkourtutorial/")]
-        int AddTutorial(VideoTutorialData newTutorail);
+        Task<int> AddTutorial(VideoTutorialData newTutorial);
 
         [Get("/extremeparkourworkout/")]
-        Task<IEnumerable<VideoTutorialData>> GetWorkoutsAsync();
+        Task<IEnumerable<WorkoutData>> GetWorkoutsAsync();
 
         [Post("/extremeparkourworkout/")]
-        int AddWorkout(VideoTutorialData newTutorail);
+        Task<int> AddWorkout(WorkoutData newTutorail);
     }
 
 }

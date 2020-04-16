@@ -13,7 +13,7 @@ namespace ExtremeParkour.ViewModels
 {
     public class VideoTutorialsPageViewModel : ViewModelBase
     {
-        private readonly IWeatherService weatherService;
+        private readonly IExtremeParkourService extremeParkourService;
 
         private List<VideoTutorialData> videoTutorials;
         public List<VideoTutorialData> VideoTutorials
@@ -30,12 +30,12 @@ namespace ExtremeParkour.ViewModels
         }
 
 
-        public VideoTutorialsPageViewModel(INavigationService navigationService, IWeatherService weatherService)
+        public VideoTutorialsPageViewModel(INavigationService navigationService, IExtremeParkourService extremeParkourService)
             : base(navigationService)
         {
             Title = "VideoTutorialsPage";
 
-            this.weatherService = weatherService;
+            this.extremeParkourService = extremeParkourService;
 
             VideoTutorials = new List<VideoTutorialData>();
 
@@ -154,7 +154,7 @@ namespace ExtremeParkour.ViewModels
         public Command getWeather;
         public Command GetWeather => getWeather ?? (getWeather = new Command(async () =>
         {
-            Forecast = await weatherService.GetForecastAsync();
+            Forecast = await extremeParkourService.GetForecastAsync();
         }));
     }
 }

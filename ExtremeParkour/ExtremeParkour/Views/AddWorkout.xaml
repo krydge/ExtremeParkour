@@ -28,11 +28,11 @@
         <StackLayout Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1">
             <Label Text="Workouts" HorizontalOptions="CenterAndExpand" Grid.ColumnSpan="2"></Label>
             <Label Text="Video Title"></Label>
-            <Entry></Entry>
+            <Entry Text="{Binding WorkoutTitle, Mode=TwoWay}"></Entry>
             <Label Text="Video Description"></Label>
-            <Entry></Entry>
-            <Label Text="Video Dificulty Level"></Label>
-            <Entry></Entry>
+            <Entry Text="{Binding Description, Mode=TwoWay}"></Entry>
+            <Label Text="Video Difficulty Level"></Label>
+            <Entry Text="{Binding Difficulty, Mode=TwoWay}"></Entry>
             <Label Text="Upload Video File"></Label>
             <StackLayout Orientation="Horizontal">
                 <Label Text="{Binding VFText}"></Label>

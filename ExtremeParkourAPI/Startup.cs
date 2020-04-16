@@ -32,7 +32,7 @@ namespace ExtremeParkourAPI
             // Configure refit settings here
             services.AddControllers();
             services.AddEntityFrameworkNpgsql();
-            services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(convertUrlConnectionString(Configuration["DATABASE_URL"])));
+            services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(translateConnectionString(Configuration["DATABASE_URL"])));
                 //.AddDbContext<PostgresContext>()
                 //.BuildServiceProvider();
             services.AddScoped<DatabaseContext>();
@@ -56,6 +56,18 @@ namespace ExtremeParkourAPI
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private static string translateConnectionString(string connnectionString)
+        {
+            try
+            {
+                return convertUrlConnectionString(connnectionString);
+            }
+            catch
+            {
+                return connnectionString + "SSL Mode=Prefer; Trust Server Certificate=true";
+            }
         }
 
         private static string convertUrlConnectionString(string url)

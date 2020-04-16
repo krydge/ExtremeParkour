@@ -1,4 +1,6 @@
-﻿using Plugin.FilePicker;
+﻿using ExtremeParkour.Services;
+using ExtremeParkour.Shared;
+using Plugin.FilePicker;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -11,6 +13,26 @@ namespace ExtremeParkour.ViewModels
 {
     public class AddWorkoutViewModel : ViewModelBase
     {
+        private readonly IExtremeParkourService extremeParkourService;
+        WorkoutData workout;
+        string workoutTitle;
+        public string WorkoutTitle
+        {
+            get => workoutTitle;
+            set { SetProperty(ref workoutTitle, value); }
+        }
+        string description;
+        public string Description
+        {
+            get => description;
+            set { SetProperty(ref description, value); }
+        }
+        string difficulty;
+        public string Difficulty
+        {
+            get => difficulty;
+            set { SetProperty(ref difficulty, value); }
+        }
         private byte[] fileData1;
         private byte[] fileData2;
         
@@ -29,18 +51,27 @@ namespace ExtremeParkour.ViewModels
             set { SetProperty(ref vFText2, value); }
         }
 
-        public AddWorkoutViewModel(INavigationService navigationService)
+        public AddWorkoutViewModel(INavigationService navigationService, IExtremeParkourService extremeParkourService)
             : base(navigationService)
         {
+            this.extremeParkourService = extremeParkourService;
+            workout = new WorkoutData();
             Title = "Add Workout";
             VFText = "Null";
             VFText2 = "Null";
         }
 
         public Command addToWorkouts;
-        public Command AddToWorkouts => addToWorkouts ?? (addToWorkouts = new Command(() =>
+        public Command AddToWorkouts => addToWorkouts ?? (addToWorkouts = new Command(async () =>
         {
-
+            workout.Title = WorkoutTitle;
+            workout.Description = Description;
+            workout.Difficulty = Difficulty;
+            workout.Image = fileData2;
+            workout.ImageName = VFText2;
+            workout.Video = fileData1;
+            workout.VideoName = VFText;
+            await extremeParkourService.AddWorkout(workout);
         }));
 
         public Command chooseVideo;

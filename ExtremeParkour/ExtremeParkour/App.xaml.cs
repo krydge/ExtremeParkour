@@ -44,7 +44,10 @@ namespace ExtremeParkour
             containerRegistry.RegisterForNavigation<AddTutorial, AddTutorialViewModel>();
 
             //The URL is for my local machine not for yours change it to yours if you plan to run it.
-            var weatherAPI = RestService.For<IWeatherService>(weathernonssl);
-            containerRegistry.RegisterInstance(weatherAPI);
-        }}
+            /*var weatherAPI = RestService.For<IWeatherService>(weathernonssl);
+            containerRegistry.RegisterInstance(weatherAPI);*/
+            var EPService = RestService.For<IExtremeParkourService>(weathernonssl);
+            containerRegistry.RegisterInstance(EPService);
+        }
+    }
 }
