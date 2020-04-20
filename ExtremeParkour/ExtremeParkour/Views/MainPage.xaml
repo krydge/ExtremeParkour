@@ -4,7 +4,7 @@
              x:Class="ExtremeParkour.Views.MainPage"
              xmlns:local1="clr-namespace:ExtremeParkour.Views"
              Title="{Binding Title}" 
-             BackgroundColor="#00FF00">
+             BackgroundColor="#9aadbf">
 
     <local1:VideoTutorialsPage></local1:VideoTutorialsPage>
     <local1:WorkoutsPage></local1:WorkoutsPage>

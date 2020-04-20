@@ -24,11 +24,11 @@
             </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell >
                         <Frame BorderColor="Black"
                             CornerRadius="10"
                             HasShadow="True"
-                            BackgroundColor="white">
+                            BackgroundColor="#32cd32">
                             
                             <Grid>
                                 <Grid.RowDefinitions>

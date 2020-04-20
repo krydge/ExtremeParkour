@@ -14,17 +14,17 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout>
+    <StackLayout >
         
         <Label Text="This is the Video Tutorial page."></Label>
 
-        <Button Command="{Binding GetWeather}" Text="Get Forecasts"></Button>
+        <!--<Button Command="{Binding GetWeather}" Text="Get Forecasts"></Button>
 
-        <ListView ItemsSource="{Binding Forecast}">
+        <ListView ItemsSource="{Binding Forecast}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
+                        <StackLayout >
                                 <Label Text="{Binding Date}"/>
                                 <Label Text="{Binding TemperatureC}"/>
                                 <Label Text="{Binding TemperatureF}"/>
@@ -33,7 +33,7 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
 
         <ListView ItemsSource="{Binding VideoTutorials}" ListView.RowHeight="110" HasUnevenRows="True" >
             <ListView.Behaviors>
@@ -42,12 +42,12 @@
                                        EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />
             </ListView.Behaviors>
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
+                <DataTemplate >
+                    <ViewCell >
                         <Frame BorderColor="Black"
                                 CornerRadius="10"
                                 HasShadow="True"
-                                BackgroundColor="white">
+                                BackgroundColor="#32cd32">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />

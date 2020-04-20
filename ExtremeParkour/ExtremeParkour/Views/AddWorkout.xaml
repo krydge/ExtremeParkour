@@ -28,12 +28,8 @@
             <Entry></Entry>
             <Label Text="Video Dificulty Level"></Label>
             <Entry></Entry>
-            <Label Text="Upload Video File"></Label>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="{Binding VFText}"></Label>
-
-                <Button Command="{Binding ChooseVideo}" Text="Choose Video File"></Button>
-            </StackLayout>
+            <Label Text="Video URL"></Label>
+            <Entry></Entry>
             <Label Text="Video Still Image Upload"></Label>
             <StackLayout Orientation="Horizontal">
                 <Label Text="{Binding VFText2}"></Label>
