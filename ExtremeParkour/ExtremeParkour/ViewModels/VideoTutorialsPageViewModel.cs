@@ -1,15 +1,19 @@
 ﻿using ExtremeParkour.Data;
+using ExtremeParkour.Services;
+using ExtremeParkour.Shared;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace ExtremeParkour.ViewModels
 {
     public class VideoTutorialsPageViewModel : ViewModelBase
     {
+        private readonly IWeatherService weatherService;
 
         private List<VideoTutorialData> videoTutorials;
         public List<VideoTutorialData> VideoTutorials
@@ -18,16 +22,27 @@ namespace ExtremeParkour.ViewModels
             set { SetProperty(ref videoTutorials, value); }
         }
 
-        public VideoTutorialsPageViewModel(INavigationService navigationService)
+        private IEnumerable<WeatherForecast> forecast;
+        public IEnumerable<WeatherForecast> Forecast
+        {
+            get => forecast;
+            set { SetProperty(ref forecast, value); }
+        }
+
+
+        public VideoTutorialsPageViewModel(INavigationService navigationService, IWeatherService weatherService)
             : base(navigationService)
         {
             Title = "VideoTutorialsPage";
+
+            this.weatherService = weatherService;
 
             VideoTutorials = new List<VideoTutorialData>();
 
             var tutorial1 = new VideoTutorialData
             {
-                Video = "null1",
+                VideoName = "null1",
+                Source= ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video1",
                 Focus = "Jumping1",
                 Description = "This is to practice your jumping",
@@ -38,7 +53,8 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial2 = new VideoTutorialData
             {
-                Video = "null2",
+                VideoName = "null2",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video2",
                 Focus = "Jumping2",
                 Description = "This is to practice your jumping",
@@ -49,7 +65,8 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial3 = new VideoTutorialData
             {
-                Video = "null3",
+                VideoName = "null3",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video3",
                 Focus = "Jumping3",
                 Description = "This is to practice your jumping",
@@ -60,8 +77,9 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial4 = new VideoTutorialData
             {
-                Video = "null4",
+                VideoName = "null4",
                 Title = "Test Video4",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping4",
                 Description = "This is to practice your jumping",
                 UserLevel = "Master"
@@ -71,7 +89,8 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial5 = new VideoTutorialData
             {
-                Video = "null5",
+                VideoName = "null5",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video5",
                 Focus = "Jumping5",
                 Description = "This is to practice your jumping",
@@ -82,8 +101,9 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial6 = new VideoTutorialData
             {
-                Video = "null6",
+                VideoName = "null6",
                 Title = "Test Video6",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping6",
                 Description = "This is to practice your jumping",
                 UserLevel = "Intermediate"
@@ -93,8 +113,9 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial7 = new VideoTutorialData
             {
-                Video = "null7",
+                VideoName = "null7",
                 Title = "Test Video7",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping7",
                 Description = "This is to practice your jumping",
                 UserLevel = "Hard"
@@ -104,8 +125,9 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial8 = new VideoTutorialData
             {
-                Video = "null8",
+                VideoName = "null8",
                 Title = "Test Video8",
+                Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping8",
                 Description = "This is to practice your jumping",
                 UserLevel = "Master"
@@ -128,5 +150,11 @@ namespace ExtremeParkour.ViewModels
 
         }
 
+
+        public Command getWeather;
+        public Command GetWeather => getWeather ?? (getWeather = new Command(async () =>
+        {
+            Forecast = await weatherService.GetForecastAsync();
+        }));
     }
 }

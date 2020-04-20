@@ -2,7 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>4ca8a361-0173-40e6-a85a-6a7d33de78c6</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="Refit" Version="5.1.27" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExtremeParkour.Shared\ExtremeParkour.Shared.csproj" />
+    <ProjectReference Include="..\ExtremeParkour\ExtremeParkour\ExtremeParkour.csproj" />
+  </ItemGroup>
 
 
 </Project>

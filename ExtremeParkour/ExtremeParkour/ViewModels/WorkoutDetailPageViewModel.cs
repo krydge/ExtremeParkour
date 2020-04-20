@@ -1,10 +1,12 @@
 ﻿using ExtremeParkour.Data;
+using ExtremeParkour.Shared;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace ExtremeParkour.ViewModels
 {
@@ -17,6 +19,13 @@ namespace ExtremeParkour.ViewModels
         }
 
         public WorkoutData Workout { get; private set; }
+
+        private ImageSource source;
+        public ImageSource Source
+        {
+            get => source;
+            set { SetProperty(ref source, value); }
+        }
 
         private string workoutName;
         public string WorkoutName
@@ -49,6 +58,7 @@ namespace ExtremeParkour.ViewModels
             }
             else
             {
+                Source = Workout.Source;
                 WorkoutName = Workout.Title;
                 Description = Workout.Description;
                 Difficulty = Workout.Difficulty;

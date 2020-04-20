@@ -1,10 +1,12 @@
 ﻿using ExtremeParkour.Data;
+using ExtremeParkour.Shared;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace ExtremeParkour.ViewModels
 {
@@ -17,6 +19,13 @@ namespace ExtremeParkour.ViewModels
         }
 
         public VideoTutorialData Tutorial { get; private set; }
+
+        private ImageSource source;
+        public ImageSource Source
+        {
+            get => source;
+            set { SetProperty(ref source, value); }
+        }
 
         private string tutorialName;
         public string TutorialName
@@ -56,6 +65,7 @@ namespace ExtremeParkour.ViewModels
             }
             else
             {
+                Source = Tutorial.Source;
                 TutorialName = Tutorial.Title;
                 Focus = Tutorial.Focus;
                 Description = Tutorial.Description;

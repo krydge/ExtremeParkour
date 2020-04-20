@@ -1,23 +1,20 @@
-﻿using ExtremeParkour.Services;
+﻿using Plugin.FilePicker;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xamarin.Forms;
 
 namespace ExtremeParkour.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class AdminControlsViewModel : ViewModelBase
     {
-
-        public MainPageViewModel(INavigationService navigationService)
+        public AdminControlsViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Extreme Parkour";
-            
+            Title = "Admin Page";
         }
 
     }
