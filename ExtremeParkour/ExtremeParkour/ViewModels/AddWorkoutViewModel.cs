@@ -33,8 +33,7 @@ namespace ExtremeParkour.ViewModels
             get => difficulty;
             set { SetProperty(ref difficulty, value); }
         }
-        private byte[] fileData1;
-        private byte[] fileData2;
+        private byte[] fileData;
         
         private string vFText;
 
@@ -49,6 +48,13 @@ namespace ExtremeParkour.ViewModels
         {
             get => vFText2;
             set { SetProperty(ref vFText2, value); }
+        }
+
+        private string vFText3;
+        public string VFText3
+        {
+            get => vFText3;
+            set { SetProperty(ref vFText3, value); }
         }
 
         public AddWorkoutViewModel(INavigationService navigationService, IExtremeParkourService extremeParkourService)
@@ -67,24 +73,12 @@ namespace ExtremeParkour.ViewModels
             workout.Title = WorkoutTitle;
             workout.Description = Description;
             workout.Difficulty = Difficulty;
-            workout.Image = fileData2;
+            workout.Image = fileData;
             workout.ImageName = VFText2;
-            workout.Video = fileData1;
-            workout.VideoName = VFText;
+            workout.VideoSource = VFText;
             await extremeParkourService.AddWorkout(workout);
         }));
 
-        public Command chooseVideo;
-        public Command ChooseVideo => chooseVideo ?? (chooseVideo = new Command(async () =>
-        {
-            var file = await CrossFilePicker.Current.PickFile();
-
-            if (file != null)
-            {
-                fileData1 = file.DataArray;
-                VFText = file.FileName.Length <= 20 ? file.FileName : file.FileName.Substring(0, 17) + "...";
-            }
-        }));
         public Command chooseImage;
         public Command ChooseImage => chooseImage ?? (chooseImage = new Command(async () =>
         {
@@ -92,8 +86,9 @@ namespace ExtremeParkour.ViewModels
 
             if (file != null)
             {
-                fileData2 = file.DataArray;
-                VFText2 = file.FileName.Length <= 20 ? file.FileName : file.FileName.Substring(0, 17) + "...";
+                fileData = file.DataArray;
+                VFText2 = file.FileName;
+                VFText3 = file.FileName.Length <= 20 ? file.FileName : file.FileName.Substring(0, 17) + "...";
             }
         }));
     }

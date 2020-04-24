@@ -41,7 +41,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial1 = new VideoTutorialData
             {
-                VideoName = "null1",
+                VideoSource = "null1",
                 Source= ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video1",
                 Focus = "Jumping1",
@@ -53,7 +53,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial2 = new VideoTutorialData
             {
-                VideoName = "null2",
+                VideoSource = "null2",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video2",
                 Focus = "Jumping2",
@@ -65,7 +65,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial3 = new VideoTutorialData
             {
-                VideoName = "null3",
+                VideoSource = "null3",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video3",
                 Focus = "Jumping3",
@@ -77,7 +77,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial4 = new VideoTutorialData
             {
-                VideoName = "null4",
+                VideoSource = "null4",
                 Title = "Test Video4",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping4",
@@ -89,7 +89,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial5 = new VideoTutorialData
             {
-                VideoName = "null5",
+                VideoSource = "null5",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Title = "Test Video5",
                 Focus = "Jumping5",
@@ -101,7 +101,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial6 = new VideoTutorialData
             {
-                VideoName = "null6",
+                VideoSource = "null6",
                 Title = "Test Video6",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping6",
@@ -113,7 +113,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial7 = new VideoTutorialData
             {
-                VideoName = "null7",
+                VideoSource = "null7",
                 Title = "Test Video7",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping7",
@@ -125,7 +125,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial8 = new VideoTutorialData
             {
-                VideoName = "null8",
+                VideoSource = "null8",
                 Title = "Test Video8",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.random-image.jpg"),
                 Focus = "Jumping8",

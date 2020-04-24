@@ -31,7 +31,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial1 = new WorkoutData
             {
-                VideoName = "null1",
+                VideoSource = "null1",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video1",
                 Description = "This is to workout",
@@ -42,7 +42,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial2 = new WorkoutData
             {
-                VideoName = "null2",
+                VideoSource = "null2",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video2",
                 Description = "This is to workout",
@@ -53,7 +53,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial3 = new WorkoutData
             {
-                VideoName = "null3",
+                VideoSource = "null3",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video3",
                 Description = "This is to workout",
@@ -64,7 +64,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial4 = new WorkoutData
             {
-                VideoName = "null4",
+                VideoSource = "null4",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video4",
                 Description = "This is to workout",
@@ -75,7 +75,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial5 = new WorkoutData
             {
-                VideoName = "null5",
+                VideoSource = "null5",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video5",
                 Description = "This is to workout",
@@ -86,7 +86,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial6 = new WorkoutData
             {
-                VideoName = "null6",
+                VideoSource = "null6",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video6",
                 Description = "This is to workout",
@@ -97,7 +97,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial7 = new WorkoutData
             {
-                VideoName = "null7",
+                VideoSource = "null7",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video7",
                 Description = "This is to workout",
@@ -108,7 +108,7 @@ namespace ExtremeParkour.ViewModels
 
             var tutorial8 = new WorkoutData
             {
-                VideoName = "null8",
+                VideoSource = "null8",
                 Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video8",
                 Description = "This is to workout",

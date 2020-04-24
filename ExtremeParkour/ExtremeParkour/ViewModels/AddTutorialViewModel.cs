@@ -42,8 +42,7 @@ namespace ExtremeParkour.ViewModels
             set { SetProperty(ref focus, value); }
         }
 
-        private byte[] fileData1;
-        private byte[] fileData2;
+        private byte[] fileData;
 
         private string vFText;
         public string VFText
@@ -59,6 +58,13 @@ namespace ExtremeParkour.ViewModels
             set { SetProperty(ref vFText2, value); }
         }
 
+        private string vFText3;
+        public string VFText3
+        {
+            get => vFText3;
+            set { SetProperty(ref vFText3, value); }
+        }
+
         public AddTutorialViewModel(INavigationService navigationService, IExtremeParkourService extremeParkourService)
             : base(navigationService)
         {
@@ -67,6 +73,7 @@ namespace ExtremeParkour.ViewModels
             Title = "Add Video Tutotrial";
             VFText = "Null";
             VFText2 = "Null";
+            VFText3 = "Null";
         }
 
         public Command addToTutorials;
@@ -76,23 +83,12 @@ namespace ExtremeParkour.ViewModels
             tutorial.Description = Description;
             tutorial.UserLevel = UserLevel;
             tutorial.Focus = Focus;
-            tutorial.Image = fileData2;
+            tutorial.Image = fileData;
             tutorial.ImageName = VFText2;
-            tutorial.Video = fileData1;
-            tutorial.VideoName = VFText;
+            tutorial.VideoSource = VFText;
             await extremeParkourService.AddTutorial(tutorial);
         }));
-        public Command chooseVideo;
-        public Command ChooseVideo => chooseVideo ?? (chooseVideo = new Command(async () =>
-        {
-            var file = await CrossFilePicker.Current.PickFile();
 
-            if (file != null)
-            {
-                fileData1 = file.DataArray;
-                VFText = file.FileName.Length <= 20 ? file.FileName : file.FileName.Substring(0, 17) + "...";
-            }
-        }));
         public Command chooseImage;
 
         public Command ChooseImage => chooseImage ?? (chooseImage = new Command(async () =>
@@ -101,8 +97,9 @@ namespace ExtremeParkour.ViewModels
 
             if (file != null)
             {
-                fileData2 = file.DataArray;
-                VFText2 = file.FileName.Length <= 20 ? file.FileName : file.FileName.Substring(0, 17) + "...";
+                fileData = file.DataArray;
+                VFText2 = file.FileName;
+                VFText3 = file.FileName.Length <= 20 ? file.FileName : file.FileName.Substring(0, 17) + "...";
             }
         }));
     }
