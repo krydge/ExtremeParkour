@@ -1,5 +1,6 @@
 ﻿using ExtremeParkour.Data;
 using ExtremeParkour.Shared;
+using Octane.Xamarin.Forms.VideoPlayer;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -16,6 +17,7 @@ namespace ExtremeParkour.ViewModels
             :base(navigationService)
         {
             Title = "Video Tutorial Details";
+            VideoSource1 = VideoSource.FromResource("ExtremeParkour.Images.test-video.mp4");
         }
 
         public VideoTutorialData Tutorial { get; private set; }
@@ -25,6 +27,13 @@ namespace ExtremeParkour.ViewModels
         {
             get => source;
             set { SetProperty(ref source, value); }
+        }
+
+        private VideoSource videoSource;
+        public VideoSource VideoSource1
+        {
+            get => videoSource;
+            set { SetProperty(ref videoSource, value); }
         }
 
         private string tutorialName;

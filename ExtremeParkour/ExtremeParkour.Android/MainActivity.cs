@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using ExtremeParkour1.Droid;
+using Octane.Xamarin.Forms.VideoPlayer.Android;
 using Prism;
 using Prism.Ioc;
 
@@ -18,6 +19,7 @@ namespace ExtremeParkour.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            FormsVideoPlayer.Init();
             LoadApplication(new App(new AndroidInitializer()));
         }
     }
