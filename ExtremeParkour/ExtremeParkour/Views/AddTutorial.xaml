@@ -42,10 +42,10 @@
                 <StackLayout Orientation="Horizontal">
                     <Label Text="{Binding VFText2}"></Label>
 
-                    <Button BackgroundColor="Gray" Command="{Binding ChooseImage}" Text="Choose Image File"></Button>
+                    <Button Command="{Binding ChooseImage}" Text="Choose Image File"></Button>
                 </StackLayout>
             </StackLayout>
-            <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="Gray" Text="Add to Tutorials" HorizontalOptions="CenterAndExpand" Command="{Binding AddToTutorials}"></Button>
+            <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="Accent" Text="Add to Tutorials" HorizontalOptions="CenterAndExpand" Command="{Binding AddToTutorials}"></Button>
         </Grid>
     </ScrollView>
 

@@ -18,9 +18,9 @@
         
         <Label Text="This is the Video Tutorial page."></Label>
 
-        <Button Command="{Binding GetWeather}" Text="Get Forecasts"></Button>
+        <!--<Button Command="{Binding GetWeather}" Text="Get Forecasts"></Button>
 
-        <ListView ItemsSource="{Binding Forecast}">
+        <ListView ItemsSource="{Binding Forecast}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -33,7 +33,7 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
 
         <ListView ItemsSource="{Binding VideoTutorials}" ListView.RowHeight="110" HasUnevenRows="True" >
             <ListView.Behaviors>
@@ -47,7 +47,7 @@
                         <Frame BorderColor="Black"
                                 CornerRadius="10"
                                 HasShadow="True"
-                                 BackgroundColor="#9aadbf">
+                                BackgroundColor="#32cd32">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
