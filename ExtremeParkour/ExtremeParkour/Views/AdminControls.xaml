@@ -10,4 +10,5 @@
 
     <local1:AddWorkout></local1:AddWorkout>
     <local1:AddTutorial></local1:AddTutorial>
+    <local1:VideoUploadInstructions></local1:VideoUploadInstructions>
 </TabbedPage>

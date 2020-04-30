@@ -17,7 +17,7 @@ namespace ExtremeParkour.ViewModels
             :base(navigationService)
         {
             Title = "Video Tutorial Details";
-            VideoSource1 = VideoSource.FromResource("ExtremeParkour.Images.test-video.mp4");
+            VideoSource1 = "https://player.vimeo.com/external/413710443.m3u8?s=374b03fa9855bf8465077e790ac94c006995891f";
         }
 
         public VideoTutorialData Tutorial { get; private set; }
