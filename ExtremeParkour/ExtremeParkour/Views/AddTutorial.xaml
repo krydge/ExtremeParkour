@@ -36,7 +36,7 @@
                 <Entry Text="{Binding Description, Mode=TwoWay}"></Entry>
                 <Label Text="User Level"></Label>
                 <Entry Text="{Binding UserLevel, Mode=TwoWay}"></Entry>
-                <Label Text="Youtube Video URL"></Label>
+                <Label Text="Video URL"></Label>
                 <Entry Text="{Binding VFText, Mode=TwoWay}"></Entry>
                 <Label Text="Video Still Image Upload"></Label>
                 <StackLayout Orientation="Horizontal">

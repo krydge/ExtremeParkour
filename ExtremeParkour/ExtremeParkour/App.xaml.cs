@@ -48,6 +48,7 @@ namespace ExtremeParkour
             containerRegistry.RegisterInstance(weatherAPI);*/
             var EPService = RestService.For<IExtremeParkourService>(weathernonssl);
             containerRegistry.RegisterInstance(EPService);
+            containerRegistry.RegisterForNavigation<VideoUploadInstructions, VideoUploadInstructionsViewModel>();
         }
     }
 }
