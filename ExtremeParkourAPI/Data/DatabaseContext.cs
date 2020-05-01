@@ -13,6 +13,7 @@ namespace ExtremeParkourAPI.Data
         {
 
         }
-        public DbSet<VideoMetaData> VideoMetaData { get; private set; }
+        public DbSet<VideoTutorialData> VideoMetaData { get; private set; }
+        public DbSet<WorkoutData> WorkoutMetaData { get; private set; }
     }
 }

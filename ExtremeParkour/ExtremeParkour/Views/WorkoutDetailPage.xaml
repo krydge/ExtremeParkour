@@ -20,7 +20,7 @@
 
         <Label Text="{Binding WorkoutName}"></Label>
         <Label Text="{Binding Difficulty}"></Label>
-        <o:VideoPlayer AutoPlay="True" Source="{Binding VideoSource}" />
+        <o:VideoPlayer AutoPlay="True" Source="{Binding VideoSource1}" />
         <Label Text="{Binding Description}"></Label>
 
     </StackLayout>

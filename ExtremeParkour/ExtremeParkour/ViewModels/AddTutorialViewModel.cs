@@ -1,6 +1,5 @@
 ﻿using ExtremeParkour.Services;
 using ExtremeParkour.Shared;
-using Plugin.FilePicker;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -15,7 +14,7 @@ namespace ExtremeParkour.ViewModels
     {
 
         private readonly IExtremeParkourService extremeParkourService;
-        VideoTutorialData tutorial;
+        private VideoTutorialData tutorial;
         
         string videoTitle;
         public string VideoTitle
@@ -42,7 +41,6 @@ namespace ExtremeParkour.ViewModels
             set { SetProperty(ref focus, value); }
         }
 
-        private byte[] fileData;
 
         private string vFText;
         public string VFText
@@ -51,29 +49,12 @@ namespace ExtremeParkour.ViewModels
             set { SetProperty(ref vFText, value); }
         }
 
-        private string vFText2;
-        public string VFText2
-        {
-            get => vFText2;
-            set { SetProperty(ref vFText2, value); }
-        }
-
-        private string vFText3;
-        public string VFText3
-        {
-            get => vFText3;
-            set { SetProperty(ref vFText3, value); }
-        }
-
         public AddTutorialViewModel(INavigationService navigationService, IExtremeParkourService extremeParkourService)
             : base(navigationService)
         {
             this.extremeParkourService = extremeParkourService;
             tutorial = new VideoTutorialData();
             Title = "Add Video Tutotrial";
-            VFText = "Null";
-            VFText2 = "Null";
-            VFText3 = "Null";
         }
 
         public Command addToTutorials;
@@ -83,13 +64,12 @@ namespace ExtremeParkour.ViewModels
             tutorial.Description = Description;
             tutorial.UserLevel = UserLevel;
             tutorial.Focus = Focus;
-            tutorial.Image = fileData;
-            tutorial.ImageName = VFText2;
+            tutorial.Source = "ExtremeParkour.Images.random-image.jpg";
             tutorial.VideoSource = VFText;
-            await extremeParkourService.AddTutorial(tutorial);
+            int returning = await extremeParkourService.AddTutorial(tutorial);
         }));
 
-        public Command chooseImage;
+        /*public Command chooseImage;
 
         public Command ChooseImage => chooseImage ?? (chooseImage = new Command(async () =>
         {
@@ -101,7 +81,7 @@ namespace ExtremeParkour.ViewModels
                 VFText2 = file.FileName;
                 VFText3 = file.FileName.Length <= 20 ? file.FileName : file.FileName.Substring(0, 17) + "...";
             }
-        }));
+        }));*/
     }
 }
 

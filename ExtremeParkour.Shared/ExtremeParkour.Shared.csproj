@@ -5,10 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Octane.Xam.VideoPlayer" Version="3.1.0" />
     <PackageReference Include="Refit" Version="5.1.67" />
     <PackageReference Include="Refit.HttpClientFactory" Version="5.1.67" />
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.657" />
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
   </ItemGroup>
 
 </Project>

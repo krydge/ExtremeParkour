@@ -18,7 +18,37 @@ namespace ExtremeParkourAPI.Migrations
                 .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("ExtremeParkour.Shared.VideoMetaData", b =>
+            modelBuilder.Entity("ExtremeParkour.Shared.VideoTutorialData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Focus")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserLevel")
+                        .HasColumnType("text");
+
+                    b.Property<string>("VideoSource")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VideoMetaData");
+                });
+
+            modelBuilder.Entity("ExtremeParkour.Shared.WorkoutData", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,12 +61,18 @@ namespace ExtremeParkourAPI.Migrations
                     b.Property<string>("Difficulty")
                         .HasColumnType("text");
 
+                    b.Property<string>("Source")
+                        .HasColumnType("text");
+
                     b.Property<string>("Title")
+                        .HasColumnType("text");
+
+                    b.Property<string>("VideoSource")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("VideoMetaData");
+                    b.ToTable("WorkoutMetaData");
                 });
 #pragma warning restore 612, 618
         }

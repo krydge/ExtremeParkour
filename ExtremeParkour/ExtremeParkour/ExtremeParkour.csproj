@@ -7,13 +7,11 @@
   <ItemGroup>
     <None Remove="Images\black-square.png" />
     <None Remove="Images\random-image.jpg" />
-    <None Remove="Images\test-video.mp4" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\black-square.png" />
     <EmbeddedResource Include="Images\random-image.jpg" />
-    <EmbeddedResource Include="Images\test-video.mp4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +21,6 @@
     <PackageReference Include="Xamarin.Auth" Version="1.7.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1422" />
-    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.34" />
   </ItemGroup>
 
   <ItemGroup>

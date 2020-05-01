@@ -17,10 +17,9 @@ namespace ExtremeParkour.ViewModels
             : base(navigationService)
         {
             Title = "Workout Detail Page";
-            VideoSource1 = VideoSource.FromResource("ExtremeParkour.Images.test-video.mp4");
         }
 
-        public WorkoutData Workout { get; private set; }
+        public WDAppSide Workout { get; private set; }
 
         private ImageSource source;
         public ImageSource Source
@@ -61,7 +60,7 @@ namespace ExtremeParkour.ViewModels
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
-            Workout = (WorkoutData)parameters["workout"];
+            Workout = (WDAppSide)parameters["workout"];
 
             if (Workout == null)
             {
@@ -69,7 +68,8 @@ namespace ExtremeParkour.ViewModels
             }
             else
             {
-                Source = Workout.Source;
+                VideoSource1 = Workout.VideoSource;
+                Source = Workout.imageSource;
                 WorkoutName = Workout.Title;
                 Description = Workout.Description;
                 Difficulty = Workout.Difficulty;

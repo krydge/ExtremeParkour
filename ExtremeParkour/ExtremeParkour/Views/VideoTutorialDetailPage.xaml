@@ -5,7 +5,6 @@
              xmlns:o="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ExtremeParkour.Views.VideoTutorialDetailPage"
-             xmlns:me="clr-namespace:ExtremeParkour.Extentions"
              Title="{Binding Title}">
 
     <ContentPage.Resources>

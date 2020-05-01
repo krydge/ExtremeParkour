@@ -1,4 +1,5 @@
 ﻿using ExtremeParkour.Data;
+using ExtremeParkour.Services;
 using ExtremeParkour.Shared;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -12,27 +13,46 @@ namespace ExtremeParkour.ViewModels
 {
     public class WorkoutsPageViewModel : ViewModelBase
     {
+        private WDAppSide workout;
 
-        private List<WorkoutData> workouts;
-        public List<WorkoutData> Workouts
+        private List<WorkoutData> workoutVideos;
+
+        private List<WDAppSide> workouts;
+        public List<WDAppSide> Workouts
         {
             get => workouts;
             set { SetProperty(ref workouts, value); }
         }
 
 
-        public WorkoutsPageViewModel(INavigationService navigationService)
+        public WorkoutsPageViewModel(INavigationService navigationService, IExtremeParkourService extremeParkourService)
             : base(navigationService)
         {
 
             Title = "WorkoutPage";
 
-            Workouts = new List<WorkoutData>();
+            Workouts = new List<WDAppSide>();
 
-            var tutorial1 = new WorkoutData
+            workout = new WDAppSide();
+
+            workoutVideos = (List<WorkoutData>)extremeParkourService.GetWorkoutsAsync().Result;
+
+            foreach (var i in workoutVideos)
+            {
+                workout.Description = i.Description;
+                workout.Difficulty = i.Difficulty;
+                workout.imageSource = ImageSource.FromResource(i.Source);
+                workout.Title = i.Title;
+                workout.VideoSource = i.VideoSource;
+
+                Workouts.Add(workout);
+            }
+
+            /*var tutorial1 = new WDAppSide
             {
                 VideoSource = "null1",
-                Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
+                Source = "ExtremeParkour.Images.black-square.png",
+                imageSource = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video1",
                 Description = "This is to workout",
                 Difficulty = "Beginner"
@@ -40,10 +60,11 @@ namespace ExtremeParkour.ViewModels
 
             Workouts.Add(tutorial1);
 
-            var tutorial2 = new WorkoutData
+            var tutorial2 = new WDAppSide
             {
                 VideoSource = "null2",
-                Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
+                Source = "ExtremeParkour.Images.black-square.png",
+                imageSource = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video2",
                 Description = "This is to workout",
                 Difficulty = "Intermediate"
@@ -51,10 +72,11 @@ namespace ExtremeParkour.ViewModels
 
             Workouts.Add(tutorial2);
 
-            var tutorial3 = new WorkoutData
+            var tutorial3 = new WDAppSide
             {
                 VideoSource = "null3",
-                Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
+                Source = "ExtremeParkour.Images.black-square.png",
+                imageSource = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video3",
                 Description = "This is to workout",
                 Difficulty = "Hard"
@@ -62,10 +84,11 @@ namespace ExtremeParkour.ViewModels
 
             Workouts.Add(tutorial3);
 
-            var tutorial4 = new WorkoutData
+            var tutorial4 = new WDAppSide
             {
                 VideoSource = "null4",
-                Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
+                Source = "ExtremeParkour.Images.black-square.png",
+                imageSource = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video4",
                 Description = "This is to workout",
                 Difficulty = "Master"
@@ -73,10 +96,11 @@ namespace ExtremeParkour.ViewModels
 
             Workouts.Add(tutorial4);
 
-            var tutorial5 = new WorkoutData
+            var tutorial5 = new WDAppSide
             {
                 VideoSource = "null5",
-                Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
+                Source = "ExtremeParkour.Images.black-square.png",
+                imageSource = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video5",
                 Description = "This is to workout",
                 Difficulty = "Beginner"
@@ -84,10 +108,11 @@ namespace ExtremeParkour.ViewModels
 
             Workouts.Add(tutorial5);
 
-            var tutorial6 = new WorkoutData
+            var tutorial6 = new WDAppSide
             {
                 VideoSource = "null6",
-                Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
+                Source = "ExtremeParkour.Images.black-square.png",
+                imageSource = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video6",
                 Description = "This is to workout",
                 Difficulty = "Intermediate"
@@ -95,10 +120,11 @@ namespace ExtremeParkour.ViewModels
 
             Workouts.Add(tutorial6);
 
-            var tutorial7 = new WorkoutData
+            var tutorial7 = new WDAppSide
             {
                 VideoSource = "null7",
-                Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
+                Source = "ExtremeParkour.Images.black-square.png",
+                imageSource = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video7",
                 Description = "This is to workout",
                 Difficulty = "Hard"
@@ -106,24 +132,25 @@ namespace ExtremeParkour.ViewModels
 
             Workouts.Add(tutorial7);
 
-            var tutorial8 = new WorkoutData
+            var tutorial8 = new WDAppSide
             {
                 VideoSource = "null8",
-                Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
+                Source = "ExtremeParkour.Images.black-square.png",
+                imageSource = ImageSource.FromResource("ExtremeParkour.Images.black-square.png"),
                 Title = "Test Video8",
                 Description = "This is to workout",
                 Difficulty = "Master"
             };
 
-            Workouts.Add(tutorial8);
+            Workouts.Add(tutorial8);*/
         }
 
 
-        private DelegateCommand<WorkoutData> itemTappedCommand;
+        private DelegateCommand<WDAppSide> itemTappedCommand;
 
-        public DelegateCommand<WorkoutData> ItemTappedCommand => itemTappedCommand ?? (itemTappedCommand = new DelegateCommand<WorkoutData>(ExecuteItemTappedCommand));
+        public DelegateCommand<WDAppSide> ItemTappedCommand => itemTappedCommand ?? (itemTappedCommand = new DelegateCommand<WDAppSide>(ExecuteItemTappedCommand));
 
-        public void ExecuteItemTappedCommand(WorkoutData selectedWorkout)
+        public void ExecuteItemTappedCommand(WDAppSide selectedWorkout)
         {
             NavigationParameters Parameters = new NavigationParameters
             {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ExtremeParkour.Services;
 using ExtremeParkourAPI.Data;
+using ExtremeParkourAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,6 +37,7 @@ namespace ExtremeParkourAPI
                 //.AddDbContext<PostgresContext>()
                 //.BuildServiceProvider();
             services.AddScoped<DatabaseContext>();
+            services.AddScoped<IDataService, PostgresDataService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

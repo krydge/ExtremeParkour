@@ -17,10 +17,9 @@ namespace ExtremeParkour.ViewModels
             :base(navigationService)
         {
             Title = "Video Tutorial Details";
-            VideoSource1 = "https://player.vimeo.com/external/413710443.m3u8?s=374b03fa9855bf8465077e790ac94c006995891f";
         }
 
-        public VideoTutorialData Tutorial { get; private set; }
+        public VTDApp Tutorial { get; private set; }
 
         private ImageSource source;
         public ImageSource Source
@@ -66,7 +65,7 @@ namespace ExtremeParkour.ViewModels
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
-            Tutorial = (VideoTutorialData)parameters["tutorial"];
+            Tutorial = (VTDApp)parameters["tutorial"];
 
             if (Tutorial == null)
             {
@@ -74,7 +73,8 @@ namespace ExtremeParkour.ViewModels
             }
             else
             {
-                Source = Tutorial.Source;
+                VideoSource1 = Tutorial.VideoSource;
+                Source = Tutorial.imageSource;
                 TutorialName = Tutorial.Title;
                 Focus = Tutorial.Focus;
                 Description = Tutorial.Description;

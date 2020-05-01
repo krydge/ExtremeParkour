@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ExtremeParkour.Shared;
+using ExtremeParkourAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,26 +16,30 @@ namespace ExtremeParkourAPI.Controllers
     [ApiController]
     public class ExtremeParkourTutorialController : ControllerBase
     {
-        public IEnumerable<VideoTutorialData> Tutorials;
+        public List<VideoTutorialData> Tutorials;
 
         private readonly ILogger<ExtremeParkourTutorialController> _logger;
+        private readonly IDataService dataService;
 
-        public ExtremeParkourTutorialController(ILogger<ExtremeParkourTutorialController> logger)
+        public ExtremeParkourTutorialController(ILogger<ExtremeParkourTutorialController> logger, IDataService dataService)
         {
             _logger = logger;
+            this.dataService = dataService;
+            Tutorials = (List<VideoTutorialData>)dataService.GetTutorials();
         }
 
         [HttpGet]
         public IEnumerable<VideoTutorialData> Get()
         {
-            return Tutorials;
+            return dataService.GetTutorials();
         }
 
         [HttpPost]
-        public void Post(VideoTutorialData newTutorial)
+        public int Post(VideoTutorialData newTutorial)
         {
-            newTutorial.Source = ImageSource.FromResource("ExtremeParkour.Images.black-square.png");
-            Tutorials.Append(newTutorial);
+            dataService.AddTutorial(newTutorial);
+            Tutorials = (List<VideoTutorialData>)dataService.GetTutorials();
+            return Tutorials.Count;
         }
     }
 }

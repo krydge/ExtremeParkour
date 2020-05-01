@@ -1,6 +1,5 @@
 ﻿using ExtremeParkour.Services;
 using ExtremeParkour.Shared;
-using Plugin.FilePicker;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -33,7 +32,6 @@ namespace ExtremeParkour.ViewModels
             get => difficulty;
             set { SetProperty(ref difficulty, value); }
         }
-        private byte[] fileData;
         
         private string vFText;
 
@@ -42,7 +40,7 @@ namespace ExtremeParkour.ViewModels
             get => vFText;
             set { SetProperty(ref vFText, value); }
         }
-
+/*
         private string vFText2;
         public string VFText2
         {
@@ -55,7 +53,7 @@ namespace ExtremeParkour.ViewModels
         {
             get => vFText3;
             set { SetProperty(ref vFText3, value); }
-        }
+        }*/
 
         public AddWorkoutViewModel(INavigationService navigationService, IExtremeParkourService extremeParkourService)
             : base(navigationService)
@@ -63,8 +61,6 @@ namespace ExtremeParkour.ViewModels
             this.extremeParkourService = extremeParkourService;
             workout = new WorkoutData();
             Title = "Add Workout";
-            VFText = "Null";
-            VFText2 = "Null";
         }
 
         public Command addToWorkouts;
@@ -73,13 +69,15 @@ namespace ExtremeParkour.ViewModels
             workout.Title = WorkoutTitle;
             workout.Description = Description;
             workout.Difficulty = Difficulty;
+            workout.Source = "ExtremeParkour.Images.black-square.png";
+            /*
             workout.Image = fileData;
-            workout.ImageName = VFText2;
+            workout.ImageName = VFText2;*/
             workout.VideoSource = VFText;
-            await extremeParkourService.AddWorkout(workout);
+            int returning = await extremeParkourService.AddWorkout(workout);
         }));
 
-        public Command chooseImage;
+        /*public Command chooseImage;
         public Command ChooseImage => chooseImage ?? (chooseImage = new Command(async () =>
         {
             var file = await CrossFilePicker.Current.PickFile();
@@ -90,6 +88,6 @@ namespace ExtremeParkour.ViewModels
                 VFText2 = file.FileName;
                 VFText3 = file.FileName.Length <= 20 ? file.FileName : file.FileName.Substring(0, 17) + "...";
             }
-        }));
+        }));*/
     }
 }
