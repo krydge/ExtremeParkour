@@ -33,7 +33,7 @@
             <Entry Text="{Binding Description, Mode=TwoWay}"></Entry>
             <Label Text="Video Difficulty Level"></Label>
             <Entry Text="{Binding Difficulty, Mode=TwoWay}"></Entry>
-            <Label Text="Youtube Video URL"></Label>
+            <Label Text="Video URL"></Label>
             <Entry Text="{Binding VFText, Mode=TwoWay}"></Entry>
         </StackLayout>
         <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="Accent" Text="Add to Workouts" HorizontalOptions="CenterAndExpand" Command="{Binding AddToWorkouts}"></Button>
