@@ -41,7 +41,7 @@ namespace ExtremeParkour.ViewModels
 
             this.extremeParkourService = extremeParkourService;
 
-            video = new VTDApp();
+            
 
             VideoTutorials = new List<VTDApp>();
 
@@ -49,6 +49,7 @@ namespace ExtremeParkour.ViewModels
 
             foreach (var i in videos)
             {
+                video = new VTDApp();
                 video.Description = i.Description;
                 video.Focus = i.Focus;
                 video.imageSource = ImageSource.FromResource(i.Source);

@@ -54,12 +54,14 @@ namespace ExtremeParkour.ViewModels
         {
             this.extremeParkourService = extremeParkourService;
             tutorial = new VideoTutorialData();
-            Title = "Add Video Tutotrial";
+            Title = "Add Video Tutorial";
+            VFText = "https://player.vimeo.com/external/413710443.m3u8?s=374b03fa9855bf8465077e790ac94c006995891f";
         }
 
         public Command addToTutorials;
         public Command AddToTutorials => addToTutorials ?? (addToTutorials = new Command(async () =>
         {
+            
             tutorial.Title = VideoTitle;
             tutorial.Description = Description;
             tutorial.UserLevel = UserLevel;
@@ -67,6 +69,11 @@ namespace ExtremeParkour.ViewModels
             tutorial.Source = "ExtremeParkour.Images.random-image.jpg";
             tutorial.VideoSource = VFText;
             int returning = await extremeParkourService.AddTutorial(tutorial);
+            VideoTitle = null;
+            Description = null;
+            UserLevel = null;
+            Focus = null;
+            VFText = null;
         }));
 
         /*public Command chooseImage;

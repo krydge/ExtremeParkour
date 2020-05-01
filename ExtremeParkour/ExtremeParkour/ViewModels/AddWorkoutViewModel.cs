@@ -61,6 +61,7 @@ namespace ExtremeParkour.ViewModels
             this.extremeParkourService = extremeParkourService;
             workout = new WorkoutData();
             Title = "Add Workout";
+            VFText = "https://player.vimeo.com/external/413710443.m3u8?s=374b03fa9855bf8465077e790ac94c006995891f";
         }
 
         public Command addToWorkouts;
@@ -73,6 +74,7 @@ namespace ExtremeParkour.ViewModels
             /*
             workout.Image = fileData;
             workout.ImageName = VFText2;*/
+            //Test with "https://player.vimeo.com/external/413710443.m3u8?s=374b03fa9855bf8465077e790ac94c006995891f" as the video source
             workout.VideoSource = VFText;
             int returning = await extremeParkourService.AddWorkout(workout);
         }));

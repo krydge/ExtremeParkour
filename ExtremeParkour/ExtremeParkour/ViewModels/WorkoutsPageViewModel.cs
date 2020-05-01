@@ -33,12 +33,13 @@ namespace ExtremeParkour.ViewModels
 
             Workouts = new List<WDAppSide>();
 
-            workout = new WDAppSide();
+            
 
             workoutVideos = (List<WorkoutData>)extremeParkourService.GetWorkoutsAsync().Result;
 
             foreach (var i in workoutVideos)
             {
+                workout = new WDAppSide();
                 workout.Description = i.Description;
                 workout.Difficulty = i.Difficulty;
                 workout.imageSource = ImageSource.FromResource(i.Source);
