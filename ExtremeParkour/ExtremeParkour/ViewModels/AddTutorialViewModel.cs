@@ -55,7 +55,7 @@ namespace ExtremeParkour.ViewModels
             this.extremeParkourService = extremeParkourService;
             tutorial = new VideoTutorialData();
             Title = "Add Video Tutorial";
-            VFText = "https://player.vimeo.com/external/413710443.m3u8?s=374b03fa9855bf8465077e790ac94c006995891f";
+            /*VFText = "https://player.vimeo.com/external/413710443.m3u8?s=374b03fa9855bf8465077e790ac94c006995891f";*/
         }
 
         public Command addToTutorials;
